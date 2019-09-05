@@ -25,6 +25,7 @@ shinyUI(fluidPage(
     mainPanel(
       htmlOutput("SpeciesTitle"),
       htmlOutput("SpeciesURL"),
+      htmlOutput("RedListStatus"),
       htmlOutput("SpeciesImage"),
       htmlOutput("RecipeURL"),
       htmlOutput("Abstract"),

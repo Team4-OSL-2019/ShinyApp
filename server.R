@@ -50,6 +50,23 @@ shinyServer(function(session,input, output) {
     
   })
   
+  output$RedListStatus <- renderText({
+    
+    myStatusHTML <- ""
+    
+    if(input$speciesInput!="None"){
+      myStatus <- ExtraFishData[as.character(ExtraFishData$SciName)==input$speciesInput,c("RedListStatus")]
+
+      if (myStatus != ""){
+        myStatusHTML <- paste("<H3>Red list status: ",myStatus,"</H3>", sep= "")
+      }
+    }
+    
+    myStatusHTML
+    
+    
+  })
+  
   # Wikipedia image
   output$SpeciesImage <- renderText({
     
